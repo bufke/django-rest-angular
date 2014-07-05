@@ -1,0 +1,13 @@
+<h1>Welcome to Poll app</h1>
+
+<form name="form">
+<div bsc-field field-options="pollOptions.name" field-form="form.name">
+  <input class="form-control" name="name" ng-required="pollOptions.name.required" type="text" ng-model="poll.name" ng-blur="savePoll('name')" />
+</div>
+
+<br/><br/>
+
+<div bsc-field field-options="pollOptions.int_field" field-form="form.int_field">
+  <input class="form-control" name="int_field" ng-required="pollOptions.int_field.required" type="text" ng-model="poll.int_field" ng-blur="savePoll('int_field')" />
+</div>
+</form>

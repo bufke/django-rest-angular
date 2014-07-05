@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/restangular/1.4.0/restangular.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.min.js"></script>
+    <script type="text/javascript">
+        var csrf_token = '{{ csrf_token|escapejs }}'
+    </script>
+
+    <script type="text/javascript" src="{% static "app/polls.js" %}"></script>
+    <script type="text/javascript" src="{% static "app/angular_django.js" %}"></script>
+</head>
+
+<body>
+
+<div class="container-fluid" ng-app="angular_django">    
+<div ng-view></div>
+</div>
+
+</body>
+</html>
