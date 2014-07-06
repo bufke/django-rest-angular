@@ -3,7 +3,6 @@ app = angular.module 'angular_django', ['restangular', 'ngRoute',]
 app.controller 'PollController', ['$scope', '$routeParams', '$route', 'RestfulModel', ($scope, $routeParams, $route, RestfulModel) ->
     $scope.$on '$routeChangeSuccess', ->
         pollModel = new RestfulModel.Instance("polls")
-        $scope.polls = pollModel.getList()
         pollModel.getOptions().then (options) ->
             $scope.pollOptions = options
         pollModel.getOne($routeParams.poll_id, $scope.form).then (poll) ->
